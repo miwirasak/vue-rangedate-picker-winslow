@@ -49,8 +49,13 @@
             :class="{'active-preset': presetActive === item.label}">
             {{item.label}}
           </li>
+        </ul>
+        <!---
+        <ul class="calendar-btn">
           <li><button class="calendar-btn-apply" @click="setDateValue()">{{captions.ok_button}}</button></li>
         </ul>
+        --->
+        <button class="calendar-btn-apply" @click="setDateValue()">{{captions.ok_button}}</button>
       </div>
       
     </div>
@@ -116,7 +121,6 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 700px;
   font-size: 12px;
-  height: 300px;
   box-shadow: -3px 4px 12px -1px #ccc;
   background: #fff;
   position: absolute;
@@ -156,6 +160,7 @@
   padding: 0 12px;
   border-left: 1px solid #ccc;
   margin: -2px;
+  height: 250px;
 }
 
 .calendar-left-mobile {
@@ -223,6 +228,8 @@ li.calendar_days_in-range {
 
 .calendar_preset {
   padding: 0;
+  overflow-y: scroll;
+  height: 180px;
 }
 
 .calendar_preset li.calendar_preset-ranges {
